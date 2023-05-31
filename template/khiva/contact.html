@@ -1,0 +1,109 @@
+{%extends 'khiva/base.html'%}
+{%load static%}
+{%block title%}Contact page{%endblock title%}
+{%block content%}
+		<!-- Header Close -->
+		<div class="banner">
+			<div class="owl-four owl-carousel" itemprop="image">
+				<img src="{%static 'images/khiva_banner1.jpg'%}" alt="Image of Bannner">
+				<img src="{%static 'images/khiva_banner2.jpg'%}" alt="Image of Bannner">
+				<img src="{%static 'images/khiva_banner3.jpg'	%}" alt="Image of Bannner">
+			</div>
+			<div class="container">
+				<h1>welcome to Khiva</h1>
+				<h3>With our advance search feature you can now find the trips for you...</h3>
+			</div>
+			 <div id="owl-four-nav" class="owl-nav"></div>
+		</div>
+		<!-- <div class="banner">
+			<div class="owl-five owl-carousel owl-theme">
+	            <div class="item-video">
+            		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            		</iframe>
+	            </div>
+	            <div class="item-video">
+	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/0bfk90rWV9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	            </div>
+	            <div class="item-video">
+	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	            </div>
+	            <div class="item-video">
+            		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            		</iframe>
+	            </div>
+	            <div class="item-video">
+	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/0bfk90rWV9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	            </div>
+	            <div class="item-video">
+	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	            </div>
+          </div>
+		</div> -->
+		<section class="contact-page-section">
+			<div class="container">
+				<div class="people-info-wrap">
+					<h2>your thoughts about our Site</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.</p>
+					<form method="post">{%csrf_token%}
+						<span>
+						<input type="text" placeholder="Full Name*" class="input- name" name="name">
+						<input type="email" placeholder="Email*" class="input- email" name="email">
+						</span>
+						<textarea placeholder="Messages*" class="input-text" name="message"></textarea>
+
+							
+						
+						<input type="submit" value="Xabar jo'natish">
+					</form>
+				</div>
+
+				<div class="contact-info">
+					<h2>contact info</h2>
+					<ul class="contact-list">
+						<li><i class="fas fa-location-arrow"></i> 
+							<span>
+								<p>Khiva, Khorezm, Uzbekistan</p>
+
+							</span>
+						</li>
+						<li><i class="fas fa-phone"></i>
+							<span> 
+								<p>Phone: 912752004, Mobile: 941163802</p>
+
+							</span>
+						</li>
+						<li><i class="fas fa-envelope"></i>
+							<span>
+								<p>husinovagabek@gmail.com</p>
+							</span>
+						</li>
+					</ul>
+					<ul class="contact-social">
+						<li><a href=""><i class="fab fa-viber"></i></a></li>
+						<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+						<li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+						<li><a href=""><i class="fab fa-facebook-messenger"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter"></i></a></li>
+						<li><a href=""><i class="fab fa-skype"></i></a></li>
+						<li><a href=""><i class="fab fa-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="map-section">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.816586163766!2d60.356755076469916!3d41.378069471301096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfa411a8e50c73%3A0x3920d4663f44b9c6!2sIchan%20Qa&#39;la!5e0!3m2!1suz!2s!4v1685025884122!5m2!1suz!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</section>
+
+		<section class="query-section">
+			<div class="container">
+				<p>Savollar uchun<a href="tel:+9779813639131"><i class="fas fa-phone"></i> +99891 2752004</a></p>
+			</div>
+		</section>
+		<!-- End of Query Section -->
+
+{%endblock content%}

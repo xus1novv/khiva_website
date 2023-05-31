@@ -1,0 +1,155 @@
+{%extends 'khiva/base.html'	%}
+{%load static%}
+{%block title%}Home page{%endblock title%}
+{%block content%}
+
+		<div class="banner">
+			<div  class="owl-four owl-carousel" itemprop="image">
+				<img src="{%static 'images/khiva_banner1.jpg'%}" alt="Image of Bannner">
+				<img src="{%static 'images/khiva_banner2.jpeg'%}" alt="Image of Bannner">
+				<img src="{%static 'images/khiva_banner3.jpg'%}" alt="Image of Bannner">
+			</div>
+			<div class="container" itemprop="description">
+				<h1>Khivaga xush kelibsiz</h1>
+
+			</div>
+			 <div id="owl-four-nav" class="owl-nav"></div>
+		</div>
+
+
+		<div class="page-heading">
+			<div class="container">
+				<h2>Mashxur imoratlar</h2>
+			</div>
+		</div>
+		<!-- Popular courses End -->
+		<div class="learn-courses">
+			<div class="container">
+				<div class="courses">
+					<div class="owl-one owl-carousel">
+						{%for khiva_new in khiva_news%}
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap" itemprop="image"><a  href="{{khiva_new.get_absolute_url}}"><img src="{{khiva_new.image.url}}" alt="courses picture"></a></div>
+							<div class="box-body" itemprop="description">
+								<p><a href="{{khiva_new.get_absolute_url}}">{{khiva_new.title}}</a></p>
+								<section itemprop="time">
+									<p><span>Duration:</span> 4 Years</p>
+
+								</section>
+							</div>
+						</div>
+						{%endfor%}
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="container">
+		<section class="page-heading">
+			<div class="container">
+				<h2>gallery</h2>
+			</div>
+		</section>
+		<section class="gallery-images-section" itemprop="image" itemscope itemtype=" http://schema.org/ImageGallery">
+			{%for gallery_image in image_news%}
+			<div class="gallery-img-wrap">
+
+					<img src="{{gallery_image.image.url}}" alt="gallery-images">
+
+			</div>
+			{%endfor%}
+
+		</section>
+</div>
+		<!-- End of gallery Images -->
+		<section class="page-heading">
+			<div class="container">
+				<h2>Restaurant in Ichan Qala</h2>
+			</div>
+		</section>
+		<section class="events-section" itemprop="event" itemscope itemtype=" http://schema.org/Event">
+			<div class="container">
+				{%for rest in restaurant%}
+				<div class="event-wrap">
+					<div class="img-wrap" itemprop="image">
+						<img src="{{rest.image.url}}" alt="event images" style = "width:420px; height:295px;">
+					</div>
+					<div class="details">
+						<a href=""><h3 itemprop="name">{{rest.res_name}}</h3></a>
+						<p itemprop="description">{{rest.text}}</p>
+
+
+						<h5 itemprop="location"><i class="fas fa-phone"></i>{{rest.tel_number}}</h5>
+						<h5 itemprop="location"><i class="fas fa-envelope"></i> {{rest.email}} </h5>
+
+					</div>
+				</div>
+				{%endfor%}
+			</div>
+		</section>
+		<!-- End of Events section -->
+		<section class="what-other-say">
+
+			<div class="container">
+				<h4 class="article-subtitle">Your opinion is important to us</h4>
+				<h2 class="head">User reviews</h2>
+
+				<div class="three owl-carousel owl-theme">
+					{%for user in users%}
+					<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<figcaption>
+										<span itemprop="author">{{user.name}}</span><br>
+										<span itemprop="author">{{user.email}}</span>
+									</figcaption>
+								</figure>
+							</div>
+							<div class="customer-review">
+								<p itemprop="description">
+									{{user.message}}
+								</p>
+							</div>
+						</div>
+
+					</div>
+{%endfor%}
+				</div>
+
+			</div>
+
+		</section>
+		<!-- End of Others talk -->
+		<section class="page-heading">
+			<div class="container">
+				<h2>latest news</h2>
+			</div>
+		</section>
+		<section class="latest-news">
+			<div class="container" itemprop="event" itemscope itemtype=" http://schema.org/Event">
+				<div class="owl-two owl-carousel">
+					{%for new in khiva_new%}
+					<div class="news-wrap" itemprop="event">
+						<div class="news-img-wrap" itemprop="image">
+							<img src="{{new.image.url}}" alt="Latest News Images" style="width:380px; height:232px">
+						</div>
+						<div class="news-detail" itemprop="description">
+							<a href=""><h1>{{new.title}}</h1></a>
+						    <h5 itemprop="location"><i class="fas fa-phone"></i>{{new.tel_number}}</h5>
+							<h5><span>Start Time:</span> {{new.time}}</h5>
+							<h2></h2>
+							<p>{{new.body}}</p>
+						</div>
+					</div>
+
+					{%endfor%}
+
+
+				</div>
+			</div>
+		</section>
+		<!-- Latest News CLosed -->
+
+		<!-- End of Query Section -->
+{%endblock content%}

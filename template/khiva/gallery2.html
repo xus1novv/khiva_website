@@ -1,0 +1,24 @@
+{%extends 'khiva/base.html'	%}
+{%load static%}
+{%block title%}Gallery page{%endblock title%}
+{%block content%}
+		<!-- Header Close -->
+<div class="container">
+		<section class="page-heading">
+			<div class="container">
+				<h2>gallery</h2>
+			</div>
+		</section>
+		<section class="gallery-images-section" itemprop="image" itemscope itemtype=" http://schema.org/ImageGallery">
+			{%for gallery_image in image_news%}
+			<div class="gallery-img-wrap">
+
+					<img src="{{gallery_image.image.url}}" alt="gallery-images">
+
+			</div>
+			{%endfor%}
+
+		</section>
+</div>
+		<!-- End of Query Section -->
+{%endblock content%}

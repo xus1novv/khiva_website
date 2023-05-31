@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>All khiva list</h1>
+{%   for khiva1 in khiva_list   %}
+    <a href="{%  url 'khiva_detail_page' khiva1.pk   %}">
+    <li>{{khiva1.title}}</li>
+    </a>
+{% endfor %}
+</body>
+</html>
